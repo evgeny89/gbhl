@@ -1,1 +1,5 @@
-.vagrant
+.idea
+.vagrant/
+mysite.local/vendor/
+mysite.local/log/
+composer.lock
