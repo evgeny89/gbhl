@@ -9,6 +9,7 @@ node = {
 
 Vagrant.configure("2") do |config|
     config.vm.define node[:name] do |cfg|
+        cfg.vm.synced_folder "mysite.local/", "/var/www/mysite.local/", type: "virtualbox"
         cfg.vm.box = node[:box]
         cfg.vm.hostname = node[:host]
         cfg.vm.network :private_network, ip: node[:ip]
