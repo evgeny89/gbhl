@@ -16,6 +16,18 @@ $mem_before = memory_get_usage();
 
 echo 'Hello World!<br>';
 
+$redis = new Redis();
+$redis->connect('127.0.0.1', 6379);
+if ($redis->ping()) {
+    echo "PONGn <br>";
+}
+
+$redis->setNx('test', 12345);
+
+echo $redis->get('test');
+
+var_dump($redis->info());
+
 require_once 'route.php';
 
 $page = $route[$_SERVER['REQUEST_URI']] ?? null;
