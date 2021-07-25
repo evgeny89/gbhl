@@ -7,6 +7,8 @@ require_once 'vendor/autoload.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
+echo phpinfo();
+
 $log = new Logger('main');
 $sh = new StreamHandler('log/my.log', Logger::DEBUG);
 $log->pushHandler($sh);
